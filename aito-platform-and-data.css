@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body {
+  font-family: "Roboto" overflow-x: hidden;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+h1 {
+  counter-reset: h2;
+  font-size: 3em;
+}
+h1:before {
+  /* counter-increment: h1; */
+  /* content: counter(h1) ". " */
+}
+
+h2 {
+  counter-reset: h3;
+  font-size: 2.2em;
+  margin-top: 1em;
+  margin: 0em;
+  padding-top: 1em;
+  padding-bottom: 0.1em;
+}
+h2:before {
+  counter-increment: h2;
+  content: counter(h2) ". "
+}
+
+h3 {
+  counter-reset: h4;
+  font-size: 1.8em;
+  margin-top: 1em;
+  margin-bottom: 0em;
+  padding-bottom: 0.1em;
+}
+h3:before {
+  counter-increment: h3;
+  content: counter(h2) "." counter(h3) ". "
+}
+h4 {
+  font-size: 1.4em;
+  display: block;
+}
+
+h4:before {
+  counter-increment: h4;
+  content: counter(h2) "." counter(h3) "." counter(h4) ". "
+}
+
+p {
+  font-size: 1.1em;
+  text-align: left;
+}
+
+small {
+  line-height: 0.8em;
+}
+
+input, textarea {
+  font-size: 1em;
+}
+
+ol li {
+  text-align: left;
+}
+
+ul li {
+  text-align: left;
+}
+
+.no-bottom-padding {
+  padding-bottom: 0px !important;
+}
+
+div.footer {
+  font-size: 1em;
+  vertical-align: bottom;
+  text-align: left;
+  padding: 1em;
+}
+
+div.footer span {
+  padding-right: 1em;
+}
+
+img[alt=aito-logo] {
+  height: 4.1em;
+  margin: auto;
+  display: block;
+  padding: 1em;
+}
+
+img[alt=aito-logo-footer] {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  height: 2.5em;
+  float: right;
+}
+
+@page {
+  size: A4;
+  margin: 11mm 17mm 17mm 17mm;
+}
+
+@media print {
+  footer {
+    position: fixed;
+    bottom: 0;
+  }
+
+  .content-block, p {
+    page-break-inside: avoid;
+  }
+
+  html, body {
+    width: 210mm;
+    height: 297mm;
+  }
+}
